@@ -13,6 +13,7 @@ replace (
 )
 
 require (
+	github.com/songtianyi/laosj v0.0.0-20180909071508-760f7844583a
 	github.com/songtianyi/rrframework v0.0.0-20180901111106-4caefe307b3f
 	github.com/songtianyi/wechat-go v0.0.0-20181016100313-a8f687684603
 )

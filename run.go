@@ -2,34 +2,40 @@ package main
 
 import (
 	"github.com/songtianyi/rrframework/logs"
+	"github.com/songtianyi/wechat-go/plugins/wxweb/config"
+	"github.com/songtianyi/wechat-go/plugins/wxweb/switcher"
+	"github.com/songtianyi/wechat-go/plugins/wxweb/system"
 	"github.com/songtianyi/wechat-go/wxweb"
 	"time"
-	"wechat-super-go/src/plugins/gifer"
+	"wechat-super-go/src/plugins/demo"
+	"wechat-super-go/src/plugins/faceplusplus"
 )
 
 func main() {
+	logs.Info("start bot...")
 	// create session
 	session, err := wxweb.CreateSession(nil, nil, wxweb.TERMINAL_MODE)
 	if err != nil {
 		logs.Error(err)
 		return
 	}
+
+	system.Register(session)
+	switcher.Register(session)
+	config.Register(session)
 	// load plugins for this session
-	//faceplusplus.Register(session)
+	//youdao.Register(session)
+	demo.Register(session)
+	faceplusplus.Register(session)
 	//replier.Register(session)
-	//switcher.Register(session)
-	//gifer.Register(session)
 	//cleaner.Register(session)
 	//laosj.Register(session)
-	//joker.Register(session)
 	//revoker.Register(session)
 	//forwarder.Register(session)
-	//system.Register(session)
-	//youdao.Register(session)
 	//verify.Register(session)
 	//share.Register(session)
-	//config.Register(session)
-	gifer.Register(session)
+	//gifer.Register(session)
+	//joker.Register(session)
 
 	// disable by type example
 	if err := session.HandlerRegister.DisableByType(wxweb.MSG_SYS); err != nil {
