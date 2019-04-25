@@ -1,0 +1,57 @@
+# github.com/PuerkitoBio/goquery v1.4.1
+github.com/PuerkitoBio/goquery
+# github.com/andybalholm/cascadia v1.0.0
+github.com/andybalholm/cascadia
+# github.com/cheggaaa/pb v2.0.6+incompatible
+github.com/cheggaaa/pb
+# github.com/mattn/go-colorable v0.0.9
+github.com/mattn/go-colorable
+# github.com/mattn/go-isatty v0.0.4
+github.com/mattn/go-isatty
+# github.com/mdp/qrterminal v0.0.0-20180608133721-ba5dc6cf021f
+github.com/mdp/qrterminal
+# github.com/songtianyi/laosj v0.0.0-20180909071508-760f7844583a
+github.com/songtianyi/laosj/spider
+# github.com/songtianyi/rrframework v0.0.0-20180901111106-4caefe307b3f
+github.com/songtianyi/rrframework/logs
+github.com/songtianyi/rrframework/config
+github.com/songtianyi/rrframework/storage
+# github.com/songtianyi/wechat-go v0.0.0-20181016100313-a8f687684603
+github.com/songtianyi/wechat-go/plugins/wxweb/cleaner
+github.com/songtianyi/wechat-go/plugins/wxweb/config
+github.com/songtianyi/wechat-go/plugins/wxweb/faceplusplus
+github.com/songtianyi/wechat-go/plugins/wxweb/forwarder
+github.com/songtianyi/wechat-go/plugins/wxweb/gifer
+github.com/songtianyi/wechat-go/plugins/wxweb/joker
+github.com/songtianyi/wechat-go/plugins/wxweb/laosj
+github.com/songtianyi/wechat-go/plugins/wxweb/replier
+github.com/songtianyi/wechat-go/plugins/wxweb/revoker
+github.com/songtianyi/wechat-go/plugins/wxweb/share
+github.com/songtianyi/wechat-go/plugins/wxweb/switcher
+github.com/songtianyi/wechat-go/plugins/wxweb/system
+github.com/songtianyi/wechat-go/plugins/wxweb/verify
+github.com/songtianyi/wechat-go/plugins/wxweb/youdao
+github.com/songtianyi/wechat-go/wxweb
+github.com/songtianyi/wechat-go/kv
+# golang.org/x/net v0.0.0-20190404232315-eb5bcb51f2a3 => github.com/golang/net v0.0.0-20190424112056-4829fb13d2c6
+golang.org/x/net/websocket
+golang.org/x/net/html
+golang.org/x/net/html/atom
+# golang.org/x/sys v0.0.0-20190412213103-97732733099d => github.com/golang/sys v0.0.0-20190425045458-9f0b1ff7b46a
+golang.org/x/sys/unix
+# gopkg.in/VividCortex/ewma.v1 v1.1.1
+gopkg.in/VividCortex/ewma.v1
+# gopkg.in/cheggaaa/pb.v2 v2.0.6
+gopkg.in/cheggaaa/pb.v2/termutil
+# gopkg.in/fatih/color.v1 v1.7.0
+gopkg.in/fatih/color.v1
+# gopkg.in/mattn/go-colorable.v0 v0.0.9
+gopkg.in/mattn/go-colorable.v0
+# gopkg.in/mattn/go-isatty.v0 v0.0.4
+gopkg.in/mattn/go-isatty.v0
+# gopkg.in/mattn/go-runewidth.v0 v0.0.3
+gopkg.in/mattn/go-runewidth.v0
+# rsc.io/qr v0.2.0
+rsc.io/qr
+rsc.io/qr/coding
+rsc.io/qr/gf256
