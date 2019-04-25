@@ -2,22 +2,9 @@ package main
 
 import (
 	"github.com/songtianyi/rrframework/logs"
-	"github.com/songtianyi/wechat-go/plugins/wxweb/cleaner"
-	"github.com/songtianyi/wechat-go/plugins/wxweb/config"
-	"github.com/songtianyi/wechat-go/plugins/wxweb/faceplusplus"
-	"github.com/songtianyi/wechat-go/plugins/wxweb/forwarder"
-	"github.com/songtianyi/wechat-go/plugins/wxweb/gifer"
-	"github.com/songtianyi/wechat-go/plugins/wxweb/joker"
-	"github.com/songtianyi/wechat-go/plugins/wxweb/laosj"
-	"github.com/songtianyi/wechat-go/plugins/wxweb/replier"
-	"github.com/songtianyi/wechat-go/plugins/wxweb/revoker"
-	"github.com/songtianyi/wechat-go/plugins/wxweb/share"
-	"github.com/songtianyi/wechat-go/plugins/wxweb/switcher"
-	"github.com/songtianyi/wechat-go/plugins/wxweb/system"
-	"github.com/songtianyi/wechat-go/plugins/wxweb/verify"
-	"github.com/songtianyi/wechat-go/plugins/wxweb/youdao"
 	"github.com/songtianyi/wechat-go/wxweb"
 	"time"
+	"wechat-super-go/src/plugins/gifer"
 )
 
 func main() {
@@ -28,20 +15,21 @@ func main() {
 		return
 	}
 	// load plugins for this session
-	faceplusplus.Register(session)
-	replier.Register(session)
-	switcher.Register(session)
+	//faceplusplus.Register(session)
+	//replier.Register(session)
+	//switcher.Register(session)
+	//gifer.Register(session)
+	//cleaner.Register(session)
+	//laosj.Register(session)
+	//joker.Register(session)
+	//revoker.Register(session)
+	//forwarder.Register(session)
+	//system.Register(session)
+	//youdao.Register(session)
+	//verify.Register(session)
+	//share.Register(session)
+	//config.Register(session)
 	gifer.Register(session)
-	cleaner.Register(session)
-	laosj.Register(session)
-	joker.Register(session)
-	revoker.Register(session)
-	forwarder.Register(session)
-	system.Register(session)
-	youdao.Register(session)
-	verify.Register(session)
-	share.Register(session)
-	config.Register(session)
 
 	// disable by type example
 	if err := session.HandlerRegister.DisableByType(wxweb.MSG_SYS); err != nil {
