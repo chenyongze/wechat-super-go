@@ -12,16 +12,29 @@ func Register(session *wxweb.Session) {
 	// 第一个参数: 指定消息类型, 所有该类型的消息都会被转发到此插件
 	// 第二个参数: 指定消息处理函数, 消息会进入此函数
 	// 第三个参数: 自定义插件名，不能重名，switcher插件会用到此名称
-	session.HandlerRegister.Add(wxweb.MSG_TEXT, wxweb.Handler(demo), "textdemo")
+	session.HandlerRegister.Add(wxweb.MSG_TEXT, wxweb.Handler(demo), "textDemo")
+	session.HandlerRegister.Add(wxweb.MSG_IMG, wxweb.Handler(demoImg), "textDemoImg")
+	// 开启插件
+	if err := session.HandlerRegister.EnableByName("textDemo"); err != nil {
+		logs.Error(err)
+	}
 
 	// 开启插件
-	if err := session.HandlerRegister.EnableByName("textdemo"); err != nil {
+	if err := session.HandlerRegister.EnableByName("textDemoImg"); err != nil {
 		logs.Error(err)
 	}
 }
 
+func demoImg(session *wxweb.Session, msg *wxweb.ReceivedMessage)  {
+	logs.Info("start textDemoImg...")
+}
+
 // 消息处理函数
 func demo(session *wxweb.Session, msg *wxweb.ReceivedMessage) {
+
+	logs.Info("start textDemo...")
+	logs.Info(msg.Who)
+	logs.Info(session.Bot.UserName)
 
 	// 可选: 可以用contact manager来过滤, 比如过滤掉没有保存到通讯录的群
 	// 注意，contact manager只存储了已保存到通讯录的群组
@@ -36,8 +49,9 @@ func demo(session *wxweb.Session, msg *wxweb.ReceivedMessage) {
 		return
 	}
 
+	logs.Info("contact.PYQuanPin:",contact.PYQuanPin)
 	// 可选: 根据wxweb.User数据结构中的数据来过滤
-	if contact.PYQuanPin != "yongze" {
+	if contact.PYQuanPin != "ChenYongze" {
 		// 比如根据用户昵称的拼音全拼来过滤
 		return
 	}
@@ -49,13 +63,14 @@ func demo(session *wxweb.Session, msg *wxweb.ReceivedMessage) {
 
 	// 取出收到的内容
 	// 取text
-	logs.Info(msg.Content)
+	logs.Info(msg.Who)
 	//// 取img
 	//if b, err := session.GetImg(msg.MsgId); err == nil {
 	//	logs.Debug(string(b))
 	//}
 
 	// anything
+	session.SendText("demo", session.Bot.UserName, msg.ToUserName)
 
 	// 回复消息
 	// 第一个参数: 回复的内容

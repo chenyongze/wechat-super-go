@@ -8,7 +8,8 @@ import (
 	"github.com/songtianyi/wechat-go/wxweb"
 	"time"
 	"wechat-super-go/src/plugins/demo"
-	"wechat-super-go/src/plugins/faceplusplus"
+	"wechat-super-go/src/plugins/love"
+	"wechat-super-go/src/plugins/revoker"
 )
 
 func main() {
@@ -20,22 +21,15 @@ func main() {
 		return
 	}
 
+	logs.Info("session:数据:",*session)
 	system.Register(session)
 	switcher.Register(session)
 	config.Register(session)
 	// load plugins for this session
-	//youdao.Register(session)
 	demo.Register(session)
-	faceplusplus.Register(session)
-	//replier.Register(session)
-	//cleaner.Register(session)
-	//laosj.Register(session)
-	//revoker.Register(session)
-	//forwarder.Register(session)
-	//verify.Register(session)
-	//share.Register(session)
-	//gifer.Register(session)
-	//joker.Register(session)
+	//管理群
+	love.Register(session)
+	revoker.Register(session)
 
 	// disable by type example
 	if err := session.HandlerRegister.DisableByType(wxweb.MSG_SYS); err != nil {
@@ -50,7 +44,10 @@ func main() {
 		logs.Error(err)
 		return
 	}
+
 	session.HandlerRegister.EnableByName("switcher")
+	session.HandlerRegister.EnableByName("love")
+	session.HandlerRegister.EnableByName("revoker")
 
 	for {
 		if err := session.LoginAndServe(false); err != nil {
